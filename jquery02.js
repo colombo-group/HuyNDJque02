@@ -60,12 +60,12 @@ $(document).ready(function(){
 		if (direction == "left") {
 			time = setInterval(function(){
 				goLeft();
-			}, 2000);
+			}, 3000);
 		}
 		else{
 			time = setInterval(function(){
 				goRight();
-			}, 2000);
+			}, 3000);
 		}
 	}
 	// see previous slide
