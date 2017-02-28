@@ -22,10 +22,10 @@ $(document).ready(function(){
 		$('#choose li').eq(cur).addClass('select');
 
 		//change boths side img
-		$('#imgleft img').hide();
-		$('#imgright img').hide();
-		$('#imgleft img').eq(cur).show();
-		$('#imgright img').eq(cur).show();
+		$('#imgleft img').hide(500);
+		$('#imgright img').hide(500);
+		$('#imgleft img').eq(cur).show(500);
+		$('#imgright img').eq(cur).show(500);
 	}
 
 	// move left
