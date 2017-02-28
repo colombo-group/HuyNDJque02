@@ -4,6 +4,7 @@ $(document).ready(function(){
 	var widthImg = 1000;
 	var direction = "";
 	var slide = 0;
+	var time = null;
 	 //import img into slide
 	for (var i = 0; i < imgArr.length; i++) {
 		imgCenter = '<img src="img/'+ imgArr[i] + '.jpg">';
@@ -15,18 +16,7 @@ $(document).ready(function(){
 		$('#choose').append('<li></li>');
 	}
 	runSlide();
-	function goImg(index){
-		$('#main-slider img').show();
-		$('#main-slider').css('margin-left',(-1) * index * widthImg+"px");
-		$('.select').removeClass('select');
-		$('#choose li').eq(cur).addClass('select');
-
-		//change boths side img
-		$('#imgleft img').hide(500);
-		$('#imgright img').hide(500);
-		$('#imgleft img').eq(cur).show(500);
-		$('#imgright img').eq(cur).show(500);
-	}
+	
 
 	// move left
 	function getPrev(index){
@@ -54,8 +44,20 @@ $(document).ready(function(){
 		goImg(cur);
 	}
 
+	function goImg(index){
+		$('#main-slider img').show();
+		$('#main-slider').css('margin-left',(-1) * index * widthImg+"px");
+		$('.select').removeClass('select');
+		$('#choose li').eq(cur).addClass('select');
+
+		//change boths side img
+		$('#imgleft img').hide(500);
+		$('#imgright img').hide(500);
+		$('#imgleft img').eq(cur).show(500);
+		$('#imgright img').eq(cur).show(500);
+	}
 	// set time to run slide
-	var time = null;
+	
 	function runSlide(){
 		if (direction == "left") {
 			time = setInterval(function(){
